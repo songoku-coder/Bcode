@@ -80,6 +80,8 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
             
             var product = ""
             
+            var  img   = ""
+            
             // バーコードの内容が空かどうかの確認
             if metadata.stringValue == nil { continue }
             
@@ -100,7 +102,7 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
 
                     let jpPro = dataArray[0]
                     let znPro = dataArray[1]
-                    let img   = dataArray[2]
+                    img   = String(dataArray[2])
 
                     product = jpPro+"\n"+znPro
                     
@@ -108,20 +110,16 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
                     product = product.removingPercentEncoding!
                     //画像セット
                     img     = img.removingPercentEncoding!
-
-
-
-
+                    
                     print(product)
                     print(img)
-
-
+                    
+                    product = "ガム  口香糖"
+                    
+                    //次の画面に表示
+                    self.performSelector(onMainThread: #selector(self.display), with:product, waitUntilDone: false)
                 }
-                }.resume()
-            
-            //次の画面に表示
-            performSelector(onMainThread: #selector(display), with: metadata.stringValue, waitUntilDone: false)
-        
+            }.resume()
             
         }
             

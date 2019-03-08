@@ -106,8 +106,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNG-aZ-uEY">
+                                <rect key="frame" x="60" y="113" width="261" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-MA-f2U">
-                                <rect key="frame" x="43" y="105" width="294" height="142"/>
+                                <rect key="frame" x="27" y="452" width="294" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -118,6 +122,7 @@
                         <viewLayoutGuide key="safeArea" id="ZKZ-18-Dwh"/>
                     </view>
                     <connections>
+                        <outlet property="image1" destination="PNG-aZ-uEY" id="25P-FN-EKu"/>
                         <outlet property="label1" destination="QhE-MA-f2U" id="xgh-Sd-T54"/>
                     </connections>
                 </viewController>
