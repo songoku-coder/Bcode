@@ -18,15 +18,29 @@ class ScanDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image:UIImage = getImageByUrl(url:"http://nanashino-bijin.com/image/44885")
-        
-        image1.image = image
+        //response分析：data:日本商品名；中国商品名；画像URL
+        let dataArray = text1.split(separator: ";")
+
+        let jpPro = dataArray[0]
+        let znPro = dataArray[1]
+        let img   = String(dataArray[2])
+        let detail = String(dataArray[3])
+
+
+        let product = "日本名："+jpPro+"\n"+"中文名："+znPro+"\n"+"\n"+"简介："+detail
 
         
-        label1.text = text1
+        //画像表示
+        let image:UIImage = getImageByUrl(url:img)
+        image1.image = image
+
+        //商品名表示
+        label1.text = String(product)
 
     }
     
+    
+    //画像表示
     func getImageByUrl(url: String) -> UIImage{
         let url = URL(string: url)
         do {

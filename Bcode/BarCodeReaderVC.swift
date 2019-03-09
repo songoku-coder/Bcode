@@ -78,10 +78,6 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
             
-            var product = ""
-            
-            var  img   = ""
-            
             // バーコードの内容が空かどうかの確認
             if metadata.stringValue == nil { continue }
             
@@ -95,29 +91,14 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
             session.dataTask(with: request) { (data, response, error) in
                 if error == nil, let data = data, let response = response as? HTTPURLResponse {
                     
-                    let data = String(data: data, encoding: String.Encoding.utf8) ?? ""
+                    // JSONをデコード
+                    let productInfo = try! JSONDecoder().decode(Product.self, from: data)
+                    
+                    // 結果を表示してみる.
+                    print(productInfo.data)  // Munesada
 
-                    let dataArray = data.split(separator: ";")
-                    
-
-                    let jpPro = dataArray[0]
-                    let znPro = dataArray[1]
-                    img   = String(dataArray[2])
-
-                    product = jpPro+"\n"+znPro
-                    
-                    //中日商品名セット
-                    product = product.removingPercentEncoding!
-                    //画像セット
-                    img     = img.removingPercentEncoding!
-                    
-                    print(product)
-                    print(img)
-                    
-                    product = "ガム  口香糖"
-                    
                     //次の画面に表示
-                    self.performSelector(onMainThread: #selector(self.display), with:product, waitUntilDone: false)
+                    self.performSelector(onMainThread: #selector(self.display), with:productInfo.data, waitUntilDone: false)
                 }
             }.resume()
             
@@ -130,6 +111,7 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
         self.dismiss(animated: true, completion: nil)
     }
     
+    //文字列次画面に表示
     @objc func display(message:String){
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -137,6 +119,11 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
         vc.text1 = message
         self.present(vc, animated: true, completion: nil)
         
+    }
+    
+    //json文字列decode
+    struct Product: Codable {  // Codableインターフェースを実装する
+        let data: String
     }
     
 }
