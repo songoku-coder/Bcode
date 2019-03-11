@@ -15,10 +15,14 @@ class FirstViewController: UIViewController {
         self.view.backgroundColor = .white
         
         // バーコードリーダーのモーダルが開くボタン
-        let buttonSize: CGFloat = 100
+        let buttonSize: CGFloat = 250
         let button: UIButton = UIButton()
-        button.frame = CGRect(x: (self.view.frame.width - buttonSize) / 2, y: (self.view.frame.height - buttonSize) / 2, width: buttonSize, height: buttonSize)
-        button.backgroundColor = .blue
+        button.frame = CGRect(x: (self.view.frame.width - buttonSize) / 2, y: (self.view.frame.height - buttonSize) / 2, width: 580, height: 386)
+        
+        button.center = self.view.center
+        //button UIButtonを画像にする
+        button.setImage(UIImage.init(named: "Image"), for: UIControl.State.normal)
+        
         button.setTitle("扫一下", for: UIControl.State.normal)
         button.addTarget(self, action: #selector(taped(sender:)), for: .touchUpInside)
         self.view.addSubview(button)
