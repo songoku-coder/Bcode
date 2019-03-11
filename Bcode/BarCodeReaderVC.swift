@@ -59,8 +59,9 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
                         
                         // 閉じるボタン
                         let closeBtn:UIButton = UIButton()
-                        closeBtn.frame = CGRect(x: 20, y: 20, width: 100, height: 40)
-                        closeBtn.setTitle("閉じる", for: UIControl.State.normal)
+                        //下部に表示
+                        closeBtn.frame = CGRect(x:((self.view.bounds.width-320)/2),y:(self.view.bounds.height-50),width:320,height:50)
+                        closeBtn.setTitle("关闭", for: UIControl.State.normal)
                         closeBtn.backgroundColor = UIColor.lightGray
                         closeBtn.addTarget(self, action: #selector(closeTaped(sender:)), for: .touchUpInside)
                         self.view.addSubview(closeBtn)
