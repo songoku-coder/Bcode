@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import RealmSwift
 
 class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     // カメラやマイクの入出力を管理するオブジェクトを生成
@@ -96,10 +97,23 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
                     let productInfo = try! JSONDecoder().decode(Product.self, from: data)
                     
                     // 結果を表示してみる.
-                    print(productInfo.data)  // Munesada
+//                    print(productInfo.data)  // Munesada
+                    
+                    let dataArray = productInfo.data.split(separator: ";")
+                    
+                    //        let jpPro = dataArray[0]
+                    let znPro = dataArray[1]
+                    let img   = String(dataArray[2])
+                    let detail = String(dataArray[3])
+                    
+                    let price = String(dataArray[4])
+                    
+                    
+                    //realmに保存
+                    self.historyInsert(barcode: metadata.stringValue!,product: String(znPro),price: price,detail: detail,imgurl: img)
 
                     //次の画面に表示
-                    self.performSelector(onMainThread: #selector(self.display), with:productInfo.data, waitUntilDone: false)
+                    self.performSelector(onMainThread: #selector(self.display), with:productInfo.data + ";" + metadata.stringValue!, waitUntilDone: false)
                 }
             }.resume()
             
@@ -126,5 +140,38 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
     struct Product: Codable {  // Codableインターフェースを実装する
         let data: String
     }
+    
+    //realm データ保存INSERT
+    @objc func historyInsert(barcode:String,product:String,price:String,detail:String,imgurl:String){
+        
+        // (1)選手データの作成
+        let history = ScanHistory()
+        
+        history.barcode = barcode
+        history.product = product
+        history.price = price
+        history.detail = detail
+        history.imgurl = imgurl
+        
+        
+        // (2)データの追加
+        let realm = try! Realm()
+        
+        // (2)クエリによるデータの取得
+        let results = realm.objects(ScanHistory.self).filter("barcode == %@", barcode).first
+
+        
+        try! realm.write {
+            if results == nil{
+                
+                realm.add( history.self )
+                
+            }
+            
+            //格納先確認
+//            print(Realm.Configuration.defaultConfiguration.fileURL!)
+        }
+    }
+    
     
 }

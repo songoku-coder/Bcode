@@ -1,0 +1,6 @@
+framework module Pods_BcodeTests {
+  umbrella header "Pods-BcodeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
