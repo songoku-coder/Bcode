@@ -140,8 +140,10 @@ class ScanDetailViewController: UIViewController {
             
             if results?.want_flg == 0 {
                results?.want_flg = 1
+               results?.updatedDate = NSDate() as Date
             }else{
                results?.want_flg = 0
+               results?.updatedDate = NSDate() as Date
             }
             
         }

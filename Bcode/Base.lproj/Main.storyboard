@@ -67,7 +67,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.77246479799574841" green="1" blue="0.35817038713997529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.83629150159999999" blue="0.30055767639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.83629150159589161" blue="0.30055767638576847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.48508760540000001" green="1" blue="0.43993065390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="upE-ih-lCe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="检索履历" image="third" id="uxK-dx-2RW"/>
@@ -206,6 +206,7 @@
                         <viewLayoutGuide key="safeArea" id="ZKZ-18-Dwh"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="goWebButton" destination="JST-xl-1Fw" id="P4t-DC-fEq"/>
                         <outlet property="image1" destination="PNG-aZ-uEY" id="25P-FN-EKu"/>

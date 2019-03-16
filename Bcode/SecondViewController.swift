@@ -13,6 +13,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var TableView: UITableView!
     
+    private weak var refreshControl: UIRefreshControl!
+    
     let results = try! Realm().objects(ScanHistory.self).filter("want_flg == 1")
     
     
@@ -21,11 +23,15 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializePullToRefresh()
+        
        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+        refresh()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,20 +65,58 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     // TableViewのCellの削除を行った際に、Realmに保存したデータを削除する
-    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
-        if(editingStyle == UITableViewCell.EditingStyle.delete) {
-            do{
-//                let realm = try Realm()
-//                try realm.write {
-//                    realm.delete(self.results[indexPath.row])
-//                }
-                tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.fade)
-            }catch{
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            // (1)Realmインスタンスの生成
+            let realm = try! Realm()
+            
+            // (2)クエリによるデータの取得
+            let results2 = realm.objects(ScanHistory.self).filter("barcode == %@",results[indexPath.row].barcode).first
+            
+            // (3)データの削除
+            try! realm.write {
+                
+                results2!.want_flg = 0
             }
-            tableView.reloadData()
+            
+            TableView.deleteRows(at: [indexPath], with: .fade)
+            
         }
+    }
+    
+    
+    // MARK: - Pull to Refresh
+    private func initializePullToRefresh() {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(onPullToRefresh(_:)), for: .valueChanged)
+        TableView.addSubview(control)
+        refreshControl = control
+    }
+    
+    @objc private func onPullToRefresh(_ sender: AnyObject) {
+        refresh()
+    }
+    
+    private func stopPullToRefresh() {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
+    }
+    
+    // MARK: - Data Flow
+    private func refresh() {
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: 1.0)
+            DispatchQueue.main.async {
+                self.completeRefresh()
+            }
+        }
+    }
+    
+    private func completeRefresh() {
+        stopPullToRefresh()
+        TableView.reloadData()
     }
     
 
