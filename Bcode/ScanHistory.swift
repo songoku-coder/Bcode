@@ -1,6 +1,6 @@
 //
 //  ScanHistory.swift
-//  Bcode
+//  realm 存储商品信息
 //
 //  Created by jian sun on 2019/03/14.
 //  Copyright © 2019 jian sun. All rights reserved.

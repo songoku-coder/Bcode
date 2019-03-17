@@ -1,6 +1,6 @@
 //
 //  HistoryDetailViewController.swift
-//  Bcode
+//  商品详细信息
 //
 //  Created by jian sun on 2019/03/16.
 //  Copyright © 2019 jian sun. All rights reserved.

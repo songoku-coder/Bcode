@@ -1,6 +1,6 @@
 //
 //  ThirdViewController.swift
-//  Bcode
+//  扫描履历主页
 //
 //  Created by jian sun on 2019/03/04.
 //  Copyright © 2019 jian sun. All rights reserved.

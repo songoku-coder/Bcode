@@ -1,6 +1,22 @@
 //
 //  ScanDetailViewController.swift
-//  Bcode
+//  显示商品详细信息
+//  1.商品图片
+//  2.商品名
+//  3.商品价格
+//  4.商品说明
+//  5.收藏按钮
+//  6.官网按钮：还没有code
+//  7.返回按钮：
+//  8.分享按钮：还没有code
+//
+//
+//  *************待加功能*********************
+//  1.上下滑动看具体商品说明
+//  
+//
+//
+//
 //
 //  Created by jian sun on 2019/03/06.
 //  Copyright © 2019 jian sun. All rights reserved.
@@ -17,11 +33,14 @@ class ScanDetailViewController: UIViewController {
     var text1:String!
     //商品名
     @IBOutlet weak var label2: UILabel!
+    
+    //价格
     @IBOutlet weak var priceLabel: UILabel!
     
+    //显示商品图片
     @IBOutlet weak var image1: UIImageView!
     
-    
+    //返回button
     @IBAction func backButton(_ sender: UIButton) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -126,7 +145,7 @@ class ScanDetailViewController: UIViewController {
     
     
     
-    //realm データ保存Update
+    //realm データ保存Update：收藏flg更新
     @objc func historyUpdate(_ sender: CustomButton){
         
         // (1)Realmインスタンスの生成
@@ -153,7 +172,8 @@ class ScanDetailViewController: UIViewController {
 
 }
 
-// ボタンのカスタムクラス（ボタン押下時のSelectorの引数を使用する為に用意）
+// ボタンのカスタムクラス（ボタン押下時のSelectorの引数を使用する為に用意）:
+//按下button把商品barcode传递给realm更新
 class CustomButton:UIButton {
     // 引数として使用する
     var argument:String?

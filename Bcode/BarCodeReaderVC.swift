@@ -1,3 +1,11 @@
+//
+//  BarCodeReaderVC.swift
+//  扫描功能
+//
+//  Created by jian sun on 2019/03/04.
+//  Copyright © 2019 jian sun. All rights reserved.
+//
+
 import UIKit
 import AVFoundation
 import RealmSwift
