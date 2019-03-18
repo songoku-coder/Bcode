@@ -59,7 +59,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //ここに遷移処理を書く
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "historydetail") as! HistoryDetailViewController
+        let vc = sb.instantiateViewController(withIdentifier: "HistestDetail") as! HistestDetailViewController
         vc.text1 = message
         self.present(vc, animated: true, completion: nil)
         

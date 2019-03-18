@@ -12,6 +12,7 @@
 		C43A157D223A98F2000F3211 /* ScanHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A157C223A98F2000F3211 /* ScanHistory.swift */; };
 		C448BE4B22300627006EF1FC /* ScanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448BE4A22300627006EF1FC /* ScanDetailViewController.swift */; };
 		C46E0A17223CAC5F006390B6 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E0A16223CAC5F006390B6 /* HistoryDetailViewController.swift */; };
+		C478282E223FE2F900C01465 /* HistestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478282D223FE2F900C01465 /* HistestDetailViewController.swift */; };
 		C4C11537222D29BF00C928C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C11536222D29BF00C928C5 /* AppDelegate.swift */; };
 		C4C11539222D29BF00C928C5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C11538222D29BF00C928C5 /* FirstViewController.swift */; };
 		C4C1153B222D29BF00C928C5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1153A222D29BF00C928C5 /* SecondViewController.swift */; };
@@ -53,6 +54,7 @@
 		C43A157C223A98F2000F3211 /* ScanHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHistory.swift; sourceTree = "<group>"; };
 		C448BE4A22300627006EF1FC /* ScanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailViewController.swift; sourceTree = "<group>"; };
 		C46E0A16223CAC5F006390B6 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		C478282D223FE2F900C01465 /* HistestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistestDetailViewController.swift; sourceTree = "<group>"; };
 		C4C11533222D29BF00C928C5 /* Bcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C11536222D29BF00C928C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C11538222D29BF00C928C5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				C4C11536222D29BF00C928C5 /* AppDelegate.swift */,
 				C448BE4A22300627006EF1FC /* ScanDetailViewController.swift */,
 				C46E0A16223CAC5F006390B6 /* HistoryDetailViewController.swift */,
+				C478282D223FE2F900C01465 /* HistestDetailViewController.swift */,
 				C4C11538222D29BF00C928C5 /* FirstViewController.swift */,
 				C4C1156A222D2DC500C928C5 /* BarCodeReaderVC.swift */,
 				C43A157C223A98F2000F3211 /* ScanHistory.swift */,
@@ -414,6 +417,7 @@
 				C46E0A17223CAC5F006390B6 /* HistoryDetailViewController.swift in Sources */,
 				C43A157D223A98F2000F3211 /* ScanHistory.swift in Sources */,
 				C4C1153B222D29BF00C928C5 /* SecondViewController.swift in Sources */,
+				C478282E223FE2F900C01465 /* HistestDetailViewController.swift in Sources */,
 				C4C11537222D29BF00C928C5 /* AppDelegate.swift in Sources */,
 				C4C11569222D2A9300C928C5 /* ThirdViewController.swift in Sources */,
 				C4C1156B222D2DC500C928C5 /* BarCodeReaderVC.swift in Sources */,

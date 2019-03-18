@@ -34,6 +34,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refresh()
     }
     
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }

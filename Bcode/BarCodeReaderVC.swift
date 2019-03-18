@@ -105,7 +105,7 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
                     let productInfo = try! JSONDecoder().decode(Product.self, from: data)
                     
                     // 結果を表示してみる.
-//                    print(productInfo.data)  // Munesada
+                    print(productInfo.data)  // Munesada
                     
                     let dataArray = productInfo.data.split(separator: ";")
                     
@@ -116,9 +116,11 @@ class BarCodeReaderVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate 
                     
                     let price = String(dataArray[4])
                     
-                    
-                    //realmに保存
-                    self.historyInsert(barcode: metadata.stringValue!,product: String(znPro),price: price,detail: detail,imgurl: img)
+                    if dataArray[0] != "jpn" {
+                        //realmに保存
+                        self.historyInsert(barcode: metadata.stringValue!,product: String(znPro),price: price,detail: detail,imgurl: img)
+                        
+                    }
 
                     //次の画面に表示
                     self.performSelector(onMainThread: #selector(self.display), with:productInfo.data + ";" + metadata.stringValue!, waitUntilDone: false)
