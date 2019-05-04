@@ -20,6 +20,7 @@ class HistoryDetailViewController: UIViewController {
     
     @IBOutlet weak var label1: UILabel!
     
+    @IBOutlet weak var image1: UIImageView!
     
     
     
@@ -28,12 +29,10 @@ class HistoryDetailViewController: UIViewController {
     @IBOutlet weak var goWebButton: UIButton!
     
     
-    @IBOutlet weak var image1: UIImageView!
     
-    @IBAction func backButton(_ sender: UIButton) {
+    @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
     
     
     
@@ -75,11 +74,11 @@ class HistoryDetailViewController: UIViewController {
         label1.sizeToFit()
         
         
-        goWebButton.backgroundColor = UIColor.white // 背景色
-        goWebButton.layer.borderWidth = 0.5 // 枠線の幅
-        goWebButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
-        goWebButton.layer.cornerRadius = 10.0 // 角丸のサイズ
-        
+//        goWebButton.backgroundColor = UIColor.white // 背景色
+//        goWebButton.layer.borderWidth = 0.5 // 枠線の幅
+//        goWebButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
+//        goWebButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+//        
         
         
         let likeButton = CustomButton()

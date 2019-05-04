@@ -29,28 +29,33 @@ class ScanDetailViewController: UIViewController {
 
     // 简介
     @IBOutlet weak var label1: UILabel!
+    
+    
     //response
     var text1:String!
     //商品名
     @IBOutlet weak var label2: UILabel!
     
+    
     //价格
     @IBOutlet weak var priceLabel: UILabel!
+    
     
     //显示商品图片
     @IBOutlet weak var image1: UIImageView!
     
+    
+    
     //返回button
-    @IBAction func backButton(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    
+    @IBAction func backButton(_ sender: Any) {
+         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
-
-    
     @IBOutlet weak var goWebButton: UIButton!
+    
+    
+    
     
     
     
@@ -94,11 +99,11 @@ class ScanDetailViewController: UIViewController {
         label1.sizeToFit()
         
         
-        goWebButton.backgroundColor = UIColor.white // 背景色
-        goWebButton.layer.borderWidth = 0.5 // 枠線の幅
-        goWebButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
-        goWebButton.layer.cornerRadius = 10.0 // 角丸のサイズ
-        
+//        goWebButton.backgroundColor = UIColor.white // 背景色
+//        goWebButton.layer.borderWidth = 0.5 // 枠線の幅
+//        goWebButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
+//        goWebButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+//        
         
         
         let likeButton = CustomButton()

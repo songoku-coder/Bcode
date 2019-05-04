@@ -30,7 +30,6 @@ class HistestDetailViewController: UIViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
