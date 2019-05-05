@@ -6,6 +6,7 @@ target 'Bcode' do
   use_frameworks!
 
   # Pods for Bcode
+  pod 'HeartButton'
   pod 'RealmSwift'
 
   target 'BcodeTests' do

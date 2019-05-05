@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import HeartButton
 
 class HistestDetailViewController: UIViewController {
     //response
@@ -29,6 +30,7 @@ class HistestDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var heartButton: HeartButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,28 +72,76 @@ class HistestDetailViewController: UIViewController {
         
         
         
-        let likeButton = CustomButton()
+//        let likeButton = CustomButton()
+//
+//        // サイズを変更する
+//        likeButton.frame = CGRect(x: 0, y: 613, width: 185, height: 54)
+//
+//        likeButton.backgroundColor = UIColor.white // 背景色
+//        likeButton.layer.borderWidth = 0.5 // 枠線の幅
+//        likeButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
+//        likeButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+//
+//        // ボタンのタイトルを設定
+//        likeButton.setTitle("Like It！❤️", for:UIControl.State.normal)
+//        likeButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+//
+//
+//        self.view.addSubview(likeButton)
+//
+//        likeButton.argument = String(barcode)
+//
+//
+//        likeButton.addTarget(self, action: #selector(historyUpdate(_:)), for: .touchDown)
         
-        // サイズを変更する
-        likeButton.frame = CGRect(x: 0, y: 613, width: 185, height: 54)
         
-        likeButton.backgroundColor = UIColor.white // 背景色
-        likeButton.layer.borderWidth = 0.5 // 枠線の幅
-        likeButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
-        likeButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+        //初期heartbutton設定
         
-        // ボタンのタイトルを設定
-        likeButton.setTitle("Like It！❤️", for:UIControl.State.normal)
-        likeButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        // (1)Realmインスタンスの生成
+        let realm = try! Realm()
+        
+        // (2)クエリによるデータの取得
+        let results = realm.objects(ScanHistory.self).filter("barcode == %@",  barcode).first
         
         
-        self.view.addSubview(likeButton)
+        if results?.want_flg == 1 {
+            self.heartButton.setOn(true, animated: true)
+        }
+            
         
-        likeButton.argument = String(barcode)
-        
-        
-        likeButton.addTarget(self, action: #selector(historyUpdate(_:)), for: .touchDown)
-        
+        self.heartButton.stateChanged = { sender, isOn in
+            if isOn {
+                // selected
+                
+                // (2)クエリによるデータの取得
+                let results = realm.objects(ScanHistory.self).filter("barcode == %@",  barcode).first
+                
+                // (3)データの更新
+                try! realm.write {
+                    
+                    if results?.want_flg == 0 {
+                        results?.want_flg = 1
+                    }
+                    
+                }
+                
+                
+            } else {
+                // unselected
+                
+                // (2)クエリによるデータの取得
+                let results = realm.objects(ScanHistory.self).filter("barcode == %@",  barcode).first
+                
+                // (3)データの更新
+                try! realm.write {
+                    
+                    if results?.want_flg == 1 {
+                        results?.want_flg = 0
+                    }
+                    
+                }
+            }
+        }
         
     }
     
