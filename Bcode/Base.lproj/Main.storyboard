@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--查找商品-->
+        <!--扫一扫-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Bcode" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="查找商品" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="扫一扫" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--检索履历-->
+        <!--扫描履历-->
         <scene sceneID="8tm-87-DAn">
             <objects>
                 <viewController id="luE-49-pdd" customClass="ThirdViewController" customModule="Bcode" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,7 +158,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="upE-ih-lCe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="检索履历" image="third" id="uxK-dx-2RW"/>
+                    <tabBarItem key="tabBarItem" title="扫描履历" image="third" id="uxK-dx-2RW"/>
                     <connections>
                         <outlet property="TableView" destination="4PV-b9-Wa3" id="UNg-g4-vJd"/>
                     </connections>
@@ -187,6 +187,9 @@
                                 <rect key="frame" x="302" y="20" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="分享"/>
+                                <connections>
+                                    <action selector="shareButton:" destination="B8I-d4-lmh" eventType="touchUpInside" id="qN5-cT-vGM"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yt-o0-Beo">
                                 <rect key="frame" x="0.0" y="49" width="375" height="803"/>
@@ -212,11 +215,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Jk-rjd" customClass="HeartButton" customModule="HeartButton">
-                                                <rect key="frame" x="156" y="278" width="34" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeH-FU-MWA">
                                                 <rect key="frame" x="38" y="417" width="141" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -224,6 +222,19 @@
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Jk-rjd" customClass="HeartButton" customModule="HeartButton">
+                                                <rect key="frame" x="38" y="241" width="29" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="onLineColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="offLineColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -285,7 +296,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="分享"/>
                                 <connections>
-                                    <action selector="goWebButton:" destination="z3l-WD-GxP" eventType="touchUpInside" id="4hY-X2-Xya"/>
+                                    <action selector="shareButton:" destination="z3l-WD-GxP" eventType="touchUpInside" id="JDl-g4-TVt"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDN-DH-MWx">
@@ -320,9 +331,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXB-C6-o0W" customClass="HeartButton" customModule="HeartButton">
-                                                <rect key="frame" x="153" y="283" width="37" height="33"/>
+                                                <rect key="frame" x="40" y="245" width="28" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="offLineColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -353,7 +369,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
-                        <outlet property="goWebButton" destination="HDe-4T-von" id="IsY-YI-PUC"/>
                         <outlet property="heartButton" destination="VXB-C6-o0W" id="kdb-Qa-IWa"/>
                         <outlet property="image1" destination="ac0-NI-L0p" id="0h1-Ca-EEK"/>
                         <outlet property="label1" destination="USS-36-4JN" id="8HA-7e-2ju"/>
@@ -386,7 +401,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="分享"/>
                                 <connections>
-                                    <action selector="goWebButton:" destination="LII-ch-CKE" eventType="touchUpInside" id="0L1-hV-m09"/>
+                                    <action selector="shareButton:" destination="LII-ch-CKE" eventType="touchUpInside" id="0sQ-2H-gSf"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-hK-65x">
@@ -421,9 +436,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqx-to-ja0" customClass="HeartButton" customModule="HeartButton">
-                                                <rect key="frame" x="155" y="276" width="39" height="41"/>
+                                                <rect key="frame" x="40" y="241" width="30" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="offLineColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -454,7 +474,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
-                        <outlet property="goWebButton" destination="8no-un-NqJ" id="9Ic-fH-2yb"/>
                         <outlet property="heartButton" destination="xqx-to-ja0" id="N2Z-3O-SMk"/>
                         <outlet property="image1" destination="Ode-Dh-aoH" id="Lj3-K0-qbO"/>
                         <outlet property="label1" destination="tel-B2-98j" id="zHo-on-Hcv"/>

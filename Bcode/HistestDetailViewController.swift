@@ -32,6 +32,29 @@ class HistestDetailViewController: UIViewController {
     
     @IBOutlet weak var heartButton: HeartButton!
     
+    
+    @IBAction func shareButton(_ sender: Any) {
+        
+        let dataArray = text1.split(separator: ";")
+        let znPro = dataArray[1]
+        let img   = String(dataArray[2])
+        let image:UIImage = getImageByUrl(url:img)
+        
+        // シェアした時の本文
+        let shareText = znPro
+        // 紹介 URL
+        let shareWebsite = ""
+        let shareImage = image
+        // シェア項目
+        let activityItems = [shareText, shareWebsite, shareImage] as [Any]
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -142,6 +165,11 @@ class HistestDetailViewController: UIViewController {
                 }
             }
         }
+        
+        
+        
+        //swipe to back
+        
         
     }
     
