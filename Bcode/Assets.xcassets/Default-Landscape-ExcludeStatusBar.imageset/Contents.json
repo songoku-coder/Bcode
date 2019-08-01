@@ -2,12 +2,10 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Default-Landscape-ExcludeStatusBar~iPad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Default-Landscape-ExcludeStatusBar~iPad@2x.png",
       "scale" : "2x"
     }
   ],

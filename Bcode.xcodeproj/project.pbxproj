@@ -258,13 +258,16 @@
 				TargetAttributes = {
 					C4C11532222D29BF00C928C5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					C4C11548222D29C000C928C5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = C4C11532222D29BF00C928C5;
 					};
 					C4C11553222D29C000C928C5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = C4C11532222D29BF00C928C5;
 					};
 				};
@@ -609,7 +612,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.Bcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -628,7 +631,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.Bcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -649,7 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.BcodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bcode.app/Bcode";
 			};
@@ -671,7 +674,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.BcodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bcode.app/Bcode";
 			};
@@ -692,7 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.BcodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Bcode;
 			};
@@ -713,7 +716,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sj.BcodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Bcode;
 			};
