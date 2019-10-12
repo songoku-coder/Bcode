@@ -1,26 +1,26 @@
 PODS:
   - HeartButton (1.1.0)
-  - Realm (3.14.2):
-    - Realm/Headers (= 3.14.2)
-  - Realm/Headers (3.14.2)
-  - RealmSwift (3.14.2):
-    - Realm (= 3.14.2)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
 
 DEPENDENCIES:
   - HeartButton
-  - RealmSwift
+  - RealmSwift (~> 3.19.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - HeartButton
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   HeartButton: 0d75e41d05292add5f1490c3a616ad24d7db4990
-  Realm: 179c6706e3a49dbfe112e572fd3c03d3169bea35
-  RealmSwift: 1797f272fb51c555b764fada32e82159a2c65247
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
 
-PODFILE CHECKSUM: a96c66f137c5b85fb138835c4b61c7f977264495
+PODFILE CHECKSUM: bb49b313d4b80b9e7c78d48be36b435068c38d24
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3

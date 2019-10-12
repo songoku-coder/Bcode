@@ -7,7 +7,7 @@ target 'Bcode' do
 
   # Pods for Bcode
   pod 'HeartButton'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 3.19.0'
 
   target 'BcodeTests' do
     inherit! :search_paths
